@@ -22,9 +22,12 @@ def index():
 @app.route('/transfer', methods=['POST', 'GET'])
 def transfer():  # 从cookie中取到用户名
     form = TransferForm()
-    # to_account = request.form.get('to_account')
     # 如果没有取到，代表没有登录
     if request.method == 'POST':
+        to_account = form.to_account.data
+        money = form.money.data
+        print(to_account)
+        print(money)
         return "<html>转账成功</html>" if form.validate_on_submit() else "<html>非法请求！！！！！</html>"
     return render_template('/transfer.html', form=form)
 

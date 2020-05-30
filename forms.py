@@ -4,10 +4,11 @@
 # Author: zhangyi 
 # Email : 450245556@qq.com
 from flask_wtf import FlaskForm
-from wtforms import StringField
+from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 
 class TransferForm(FlaskForm):
-    to_account = StringField('to_account', validators=[DataRequired(message='请输入名户名')])
-    money = StringField('money', validators=[DataRequired(message='请输入密码')])
+    to_account = StringField(validators=[DataRequired(message='请输入名户名')])
+    money = StringField(validators=[DataRequired(message='请输入密码')])
+    submit = SubmitField('转账')

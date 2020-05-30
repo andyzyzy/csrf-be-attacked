@@ -8,9 +8,9 @@
 <h1>我是网站A，转账页面</h1>
 <form method='post' action="./transfer">
     {{ form.hidden_tag() }}
-    <label>账户：</label><input type='text' name='to_account' placeholder='请输入要转账的账户'><br/>
-    <label>金额：</label><input type='text' name='money' placeholder='请输入转账金额'><br/>
-<input type='submit' value='转账'>
+    <p>{{ form.to_account(placeholder="账户") }}</p>
+    <p>{{ form.money(placeholder="金额") }}</p>
+    <p>{{ form.submit() }}</p>
 </form>
 
 </body>
